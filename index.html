@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Next 𝕏 Post Suggestion</h1>
+        <div id="output" class="output">
+            <div class="row">
+                <div class="title">Next Tweet:</div>
+                <div class="content" id="nextTweet"></div>
+            </div>
+            <div class="row">
+                <div class="title">Content Type:</div>
+                <div class="content" id="contentType"></div>
+            </div>
+            <div class="row">
+                <div class="title">Possible CTA:</div>
+                <div class="content" id="possibleCTA"></div>
+            </div>
+        </div>
+        <button onclick="displayNext()">Get Next Combination</button>
+    </div>    
+</body>
+</html>
