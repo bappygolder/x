@@ -16,17 +16,22 @@
     <div class="container">
         <h1>Your Next 𝕏 Post Suggestion</h1>
         <div id="output" class="output">
-            <div class="row">
-                <div class="title">Next Post:</div>
-                <div class="content" id="nextTweet"></div>
+            <div id="suggestedContent" class="suggested-content">
+                <p class="placeholder-text">Click the blue button below to start getting topics for your next piece of content.</p>
             </div>
-            <div class="row">
-                <div class="title">Content Type:</div>
-                <div class="content" id="contentType"></div>
-            </div>
-            <div class="row">
-                <div class="title">Possible CTA:</div>
-                <div class="content" id="possibleCTA"></div>
+            <div id="generatedContent" style="display: none;">
+                <div class="row">
+                    <div class="title">Next Post:</div>
+                    <div class="content" id="nextTweet"></div>
+                </div>
+                <div class="row">
+                    <div class="title">Content Type:</div>
+                    <div class="content" id="contentType"></div>
+                </div>
+                <div class="row">
+                    <div class="title">Possible CTA:</div>
+                    <div class="content" id="possibleCTA"></div>
+                </div>
             </div>
         </div>
         <button onclick="displayNext()">Get Next Combination</button>
