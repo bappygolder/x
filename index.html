@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𝕏 Post Subject Generator - Tweet Generator</title>
-    <meta name="description" content="Discover captivating content ideas effortlessly with the 𝕏 (formerly Twitter) Post Subject Generator. Seamlessly generate tweet suggestions spanning a diverse range of themes, content types, and engaging calls to action. Elevate your social media prowess with this innovative tool.">
+    <meta name="description" content="Create your own unique content ideas effortlessly with the 𝕏 (formerly Twitter) Post Subject Generator. Seamlessly generate tweet suggestions spanning a diverse range of themes, content types, and engaging calls to action. Elevate your social media prowess with this innovative tool.">
     <meta name="keywords" content="tweet generator, post generator, content suggestion generator, social media tool, content ideas, tweet ideas, social media marketing, content creation, engagement strategy, tweet suggestions, post inspiration, content planning, social media management">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
@@ -24,16 +24,34 @@
                     <div class="title">Next Post:</div>
                     <div class="content" id="nextTweet"></div>
                 </div>
-                <div class="row">
+                <div class="row content-type-row">
                     <div class="title">Content Type:</div>
                     <div class="content" id="contentType"></div>
                 </div>
-                <div class="row">
+                <div class="row cta-row">
                     <div class="title">Possible CTA:</div>
                     <div class="content" id="possibleCTA"></div>
                 </div>
             </div>
         </div>
+
+        <div class="toggles">
+            <div class="toggle-item">
+                <label class="switch">
+                  <input type="checkbox" id="contentTypeToggle" checked>
+                  <span class="slider"></span>
+                </label>
+                <label for="contentTypeToggle">Show Content Type</label>
+            </div>
+            <div class="toggle-item">
+                <label class="switch">
+                  <input type="checkbox" id="ctaToggle" checked>
+                  <span class="slider"></span>
+                </label>
+                <label for="ctaToggle">Show Possible CTA</label>
+            </div>
+        </div>
+        
         <button onclick="displayNext()">Get Next Combination</button>
     </div>    
 </body>

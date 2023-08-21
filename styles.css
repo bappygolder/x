@@ -19,7 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Update this line */
-    height: 300px;
+    /* height: 300px; */
 }
 
 
@@ -51,7 +51,6 @@ h1 {
 .output {
     background-color: #f0f0f0;
     margin: 5px 0 20px;
-    overflow-y: auto;
     padding: 10px;
     border-radius: 5px;
 }
@@ -94,6 +93,16 @@ button:hover {
 .placeholder-text {
     color: #959596;
 }
+
+.toggle-item {
+    margin-bottom: 10px; /* Or whatever spacing you prefer between the items */
+  }
+
+.toggles {
+    margin-bottom: 16px;
+    color: #959596;
+}
+  
 
 @media (max-width: 400px) {
     .container {
