@@ -102,7 +102,22 @@ button:hover {
     margin-bottom: 16px;
     color: #959596;
 }
-  
+
+.about-info {
+    text-align: center; /* Center the text */
+    margin-top: 16px;
+    color: #666; /* Text color */
+    font-size: 10px; /* Font size */
+}
+
+.about-info a {
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.about-info a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
 
 @media (max-width: 400px) {
     .container {
