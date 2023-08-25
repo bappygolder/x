@@ -11,6 +11,7 @@ export default function Home() {
         contentType: '',
         possibleCTA: ''
     });
+    const [startText, setStartText] = useState(false)
 
     const displayNext = () => {
         const shuffledGeneralIndex = Math.floor(Math.random() * generalPillars.length);
@@ -26,6 +27,8 @@ export default function Home() {
             contentType: nextContent,
             possibleCTA: nextCTA
         });
+
+        setStartText(!startText)
     };
 
     return (
@@ -37,9 +40,7 @@ export default function Home() {
                 <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md flex flex-col justify-center">
                     <h1 className="text-xl text-[#333333] font-sans mb-6 font-[600]">Your Next 𝕏 Post Suggestion</h1>
                     <div className="bg-gray-200 p-4 rounded-md mb-4">
-                        <div className="mb-2">
-                            <p className="placeholder-text hidden">Click the blue button below to start getting topics for your next piece of content.</p>
-                        </div>
+                      {startText ?  
                         <div className="text-[#000000]" id="generatedContent">
                             <div className="flex items-center justify-between mb-2">
                                 <div className="title text-[16px] w-[150px] font-[600]">Next Post:</div>
@@ -57,7 +58,11 @@ export default function Home() {
                                     <div className="content text-[16px] w-[230px]" id="possibleCTA">{suggestedContent.possibleCTA}</div>
                                 </div>
                             )}
-                        </div>
+                        </div>:
+                        <div className="">
+                        <p className="placeholder-text">Click the blue button below to start getting topics for your next piece of content.</p>
+                    </div>
+                        }
                     </div>
 
                     <div className="mb-4">
