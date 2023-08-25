@@ -1,0 +1,65 @@
+/* styles.module.css */
+
+.container {
+    @apply bg-white p-8 rounded-lg shadow-md w-full max-w-md flex flex-col justify-center;
+}
+
+.output-container {
+    @apply bg-gray-200 p-4 rounded-md mb-4;
+}
+
+.output-container strong {
+    @apply font-bold;
+}
+
+.title {
+    @apply flex w-32 text-left;
+}
+
+.content {
+    @apply flex text-left;
+}
+
+.placeholder-text {
+    @apply text-gray-600;
+}
+
+.toggles {
+    @apply mb-4 text-gray-600;
+}
+
+.toggle-item {
+    @apply mb-2;
+}
+
+.switch {
+    @apply relative inline-block w-10 align-middle select-none transition duration-200 ease-in-out;
+}
+
+.switch input {
+    @apply opacity-0 w-0 h-0;
+}
+
+.slider {
+    @apply absolute block w-6 h-6 bg-white border border-gray-300 rounded-full cursor-pointer top-0 left-0;
+    transition: 0.2s;
+}
+
+.slider:before {
+    @apply block w-4 h-4 rounded-full bg-gray-300 border-gray-300 absolute transform translate-x-0 translate-y-0 top-1/2 left-1/2 transition duration-200 ease-in-out;
+    content: "";
+}
+
+input:checked ~ .slider {
+    @apply bg-blue-500 border-blue-500;
+}
+
+input:checked ~ .slider:before {
+    @apply transform translate-x-full;
+}
+
+@media (max-width: 400px) {
+    .container {
+        @apply p-4;
+    }
+}
