@@ -1,0 +1,23 @@
+.title{
+    @apply font-medium text-[#000000] text-[11px] leading-4;
+}
+
+.input{
+    @apply w-[297px] h-[45px] font-poppins self-stretch rounded flex flex-row py-3 px-4 items-center justify-center bg-[#F3F3F3];
+}
+
+.contentType{
+    @apply flex gap-2;
+}
+
+.trashcan{
+    @apply w-[45px] h-[45px] bg-[#F3F3F3] flex items-center justify-center;
+}
+
+.addContent{
+    @apply absolute top-[276px] flex gap-[24px];
+}
+
+.add{
+    @apply w-[100px] h-[66px] flex flex-col items-center gap-[4px];
+}
