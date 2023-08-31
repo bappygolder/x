@@ -15,7 +15,7 @@
 }
 
 .addContent{
-    @apply absolute top-[276px] flex gap-[24px];
+    @apply absolute top-[280px] flex gap-[24px];
 }
 
 .add{
