@@ -1,0 +1,35 @@
+.container {
+    @apply relative bg-white w-full min-h-screen overflow-hidden text-left text-white font-poppins;
+}
+
+.logo {
+    @apply absolute mt-[79px] w-full flex flex-row items-start justify-center gap-[10px] cursor-pointer;
+}
+
+.generate {
+    @apply absolute w-full top-[281px] flex flex-col items-center justify-center gap-[16px] text-left text-[14px] text-black font-poppins
+}
+
+.title {
+    @apply relative text-[#000000] text-sm leading-5 font-[400] font-poppins;
+}
+
+.buttonContainer {
+    @apply absolute top-[37px] flex flex-row px-0 box-border items-center justify-center;
+}
+
+.button {
+    @apply flex items-center justify-center font-semibold  rounded-lg bg-[#3579F6] w-[344px] h-[63px] text-white leading-5 text-[15px] font-poppins;
+}
+
+.postSection {
+    @apply absolute top-[153px] w-full flex flex-col items-center justify-start gap-[16px] text-left text-[14px] text-black font-poppins;
+}
+
+.footer {
+    @apply absolute top-[631px] left-[calc(50%_-_90.5px)] text-xs text-center text-[#666666];
+}
+
+.footerText {
+    @apply text-[#007bff];
+}

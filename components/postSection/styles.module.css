@@ -1,3 +1,16 @@
+.container {
+    @apply flex flex-col items-start justify-start text-xs text-[#000000] shadow-md;
+}
+
+.customizePost{
+    @apply rounded-lg bg-white shadow-[0px_4px_24px_rgba(29,_35,_46,_0.1)] w-[345px] min-h-[110px] flex flex-col p-6 box-border items-start justify-center;
+}
+
+.contentType {
+    @apply self-stretch flex flex-col py-1 box-border items-start justify-start;
+}
+
+
 .title{
     @apply font-medium text-[#000000] text-[11px] leading-4;
 }
@@ -6,7 +19,7 @@
     @apply w-[297px] h-[45px] font-poppins self-stretch rounded flex flex-row py-3 px-4 items-center justify-center bg-[#F3F3F3];
 }
 
-.contentType{
+.contentTypeItems{
     @apply flex gap-2;
 }
 
@@ -20,4 +33,12 @@
 
 .add{
     @apply w-[100px] h-[66px] flex flex-col items-center gap-[4px];
+}
+
+.generatePost{
+    @apply absolute top-[400px] flex flex-row px-0 box-border items-center justify-center;
+}
+
+.generatePostButton{
+    @apply flex items-center justify-center font-semibold  rounded-lg bg-[#3579F6] w-[345px] h-[63px] text-white;
 }

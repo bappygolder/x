@@ -4,6 +4,7 @@ import PostSection from "../components/postSection/PostSection";
 import Image from "next/image";
 import logo from "../public/logo/logo.png";
 import postLogo from "../public/logo/post-logo.png";
+import styles from "./styles.module.css";
 
 const Home = () => {
   //Create a state for the create post button and the postpilot logo
@@ -11,13 +12,14 @@ const Home = () => {
 
   //Create a function for the handleClick that triggers the state change
   const handleClick = () => {
-    setCreatePost(true);
+    setTimeout(() => {
+      setCreatePost(true);
+    }, 300)
   };
   return (
-    <div className="relative bg-white w-full min-h-screen overflow-hidden text-left text-mini text-white font-poppins">
-      <div className="absolute top-[79px] w-full flex flex-row items-start justify-center gap-[10px] cursor-pointer">
+    <div className={styles.container}>
+      <div className={styles.logo}>
         {/* Add logo image with also onClick handler to be able to fire the handleClick function */}
-        <div className="relative w-[159px] h-[51px]" />
         {/* Show the logo if createPost is false and the extended pilot logo when createPost is true */}
         {createPost ? (
           <Image
@@ -39,33 +41,30 @@ const Home = () => {
           />
         )}{" "}
       </div>
-      <section className="absolute w-full top-[281px] flex flex-col items-center justify-center gap-[16px] text-left text-[14px] text-black font-poppins">
-        <div className="relative text-[#000000] text-sm leading-5 font-[400] font-poppins">
+      <section className={styles.generate}>
+        <div className={styles.title}>
           click to generate your first post idea
         </div>
 
         {!createPost && (
-          <div className="absolute top-[37px] flex flex-row px-0 box-border items-center justify-center">
-            <div
-              className="flex items-center justify-center font-semibold  rounded-lg bg-[#3579F6] w-[344px] h-[63px] text-white leading-5 text-15px font-poppins"
-              onClick={handleClick}
-            >
+          <div className={styles.buttonContainer}>
+            <button className={styles.button} onClick={handleClick}>
               Generate Post Idea
-            </div>
+            </button>
           </div>
         )}
       </section>
 
       {/* Show the PostSection only if the createPost state is true */}
-      <section className="absolute top-[153px] w-full flex flex-col items-center justify-start gap-[16px] text-left text-[14px] text-black font-poppins">
+      <section className={styles.postSection}>
         {createPost && <PostSection />}
       </section>
 
       {/* The footer section */}
 
-      <div className="absolute top-[631px] left-[calc(50%_-_90.5px)] text-xs text-center text-[#666666]">
+      <div className={styles.footer}>
         <span>Designed with ❤️ by </span>
-        <span className="text-[#007bff]">Post Pilot</span>
+        <span className={styles.footerText}>Post Pilot</span>
       </div>
     </div>
   );
