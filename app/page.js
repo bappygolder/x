@@ -35,7 +35,7 @@ const Home = () => {
             height={51}
             onClick={handleClick}
           />
-          <p className="text-sm font-normal text-black w-full">your daily post partner</p>
+          <p className="text-sm font-normal text-black w-full mt-[2px]">your daily post partner</p>
           </div>
         ) : (
           <Image
