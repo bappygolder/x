@@ -24,7 +24,7 @@
 }
 
 .trashcan{
-    @apply w-[45px] h-[45px] bg-[#F3F3F3] flex items-center justify-center;
+    @apply w-[45px] h-[45px] bg-[#F3F3F3] flex items-center justify-center rounded-[4px];
 }
 
 .addContent{
