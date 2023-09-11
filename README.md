@@ -59,20 +59,25 @@ npm install
 npm run dev
 
 Access Post-Pilot in your web browser at http://localhost:3000.
+```
 
 
 
-## 6. Technologies Used
-Next.js: Post-Pilot is developed using Next.js, a popular React framework for building server-rendered React applications. Next.js provides features like server-side rendering, routing, and code splitting, which contribute to the tool's performance and SEO-friendliness.
+## Technologies Used
 
-React: The user interface of Post-Pilot is constructed using React, a JavaScript library for building user interfaces. React's component-based architecture allows for the creation of reusable UI elements that enhance maintainability.
+- **Next.js:** Post-Pilot is developed using Next.js, a popular React framework for building server-rendered React applications. Next.js provides features like server-side rendering, routing, and code splitting, which contribute to the tool's performance and SEO-friendliness.
 
-Tailwind CSS: The styling of Post-Pilot is achieved with Tailwind CSS, a utility-first CSS framework. Tailwind CSS enables rapid UI development by providing a set of utility classes that can be combined to create custom styles.
+- **React:** The user interface of Post-Pilot is constructed using React, a JavaScript library for building user interfaces. React's component-based architecture allows for the creation of reusable UI elements that enhance maintainability.
 
-## 7.Version Control and Collaboration
-Git: The entire development process of Post-Pilot benefits from Git version control. Git allows for effective tracking of changes, collaboration among team members, and the ability to manage different branches and features.
+- **Tailwind CSS:** The styling of Post-Pilot is achieved with Tailwind CSS, a utility-first CSS framework. Tailwind CSS enables rapid UI development by providing a set of utility classes that can be combined to create custom styles.
 
-GitHub: The project is hosted on GitHub, a widely used platform for hosting Git repositories. GitHub provides tools for collaboration, code review, and managing issues and pull requests.
+## Version Control and Collaboration
 
-## 8. Contact
-If you have any questions or need assistance, feel free to contact us at *****your@email.com*****.
+- **Git:** The entire development process of Post-Pilot benefits from Git version control. Git allows for effective tracking of changes, collaboration among team members, and the ability to manage different branches and features.
+
+- **GitHub:** The project is hosted on GitHub, a widely used platform for hosting Git repositories. GitHub provides tools for collaboration, code review, and managing issues and pull requests.
+
+## Contact
+
+If you have any questions or need assistance, feel free to contact us at your@email.com.
+
