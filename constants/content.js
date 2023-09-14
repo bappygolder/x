@@ -38,3 +38,33 @@ export const contentTypes = [
     "Quote Repost",
     "Photo / Gif",
 ];
+
+
+export const preferenceOptions = [
+    "Advice",
+    "Animals",
+    "Anime",
+    "Art & Design",
+    "Beauty",
+    "Hobies",
+    "DIY & Home",
+    "Entertainment",
+    "Fashion",
+    "Finance & Business",
+    "Food", 
+    "Funny",
+    "Gaming",
+    "Health & Lifestyle",
+    "Livestreams",
+    "Music",
+    "News",
+    "Outdoors",
+    "Reading & Literature",
+    "Relationships",
+    "School",
+    "Science",
+    "Sports",
+    "Technology",
+    "Travel & Nature",
+    "Other",                       
+]

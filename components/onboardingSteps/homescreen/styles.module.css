@@ -1,0 +1,30 @@
+.container {
+    @apply absolute -ml-6 bg-white w-full min-h-screen overflow-hidden text-left text-white font-poppins;
+}
+
+.welcome {
+    @apply mt-[28px] flex flex-col items-center justify-center px-[24px] min-[390px]:mt-10;
+}
+
+.title {
+    @apply w-full flex justify-center text-[#000] text-xl font-medium leading-5;
+}
+
+.iconandtext {
+    @apply flex flex-col text-black justify-center items-center mt-4;
+}
+
+.iconSpan {
+    @apply flex items-center gap-2 mt-4 min-[390px]:mt-6;
+}
+
+.text {
+    @apply text-sm;
+}
+
+.button {
+    @apply bg-[#3579F6] text-[16px] leading-6 w-full h-[72px] px-6 py-[10px] rounded-[999px] mt-4 min-[390px]:mt-28;
+}
+
+
+

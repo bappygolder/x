@@ -1,0 +1,20 @@
+.container {
+    @apply font-poppins;
+}
+
+.title {
+    @apply text-[#000000] text-xl font-medium mt-2;
+}
+
+.paragraph {
+    @apply text-sm font-normal;
+}
+
+
+.options {
+    @apply flex flex-wrap w-[327px] gap-3 mt-6 text-black min-[390px]:w-[342px];
+}
+
+.button {
+    @apply w-full h-[72px] rounded-[999px] px-6 py-[10px];
+}
