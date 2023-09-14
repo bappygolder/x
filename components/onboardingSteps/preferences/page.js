@@ -35,7 +35,7 @@ function Preferences() {
                 selectedItems.includes(option)
                   ? "bg-[#3579F6] text-white"
                   : "bg-black bg-opacity-[5%] text-black"
-              } py-3 px-6 min-w-[60px] rounded-[999px] cursor-pointer`}
+              } py-3 px-6 min-w-[60px] rounded-[999px] cursor-pointer text-sm`}
               onClick={() => toggleSelection(option)}
             >
               {option}
