@@ -8,9 +8,6 @@ import iconTwo from '../../../public/icons/second-icon.png';
 import iconThree from '../../../public/icons/third-icon.png';
 
 const Homescreen = ({ handleNext }) => {
-  const handleClick = () => {
-    handleNext(); // Proceed to the next step when the button is clicked
-  };
 
   return (
     <div className={styles.container}>
@@ -38,7 +35,7 @@ const Homescreen = ({ handleNext }) => {
               <p className={styles.text}>Build followers, reach your goals and unleash your creativity!</p>
             </span>
           </div>
-          <button className={styles.button} onClick={handleClick}>
+          <button className={styles.button} onClick={handleNext}>
             Let’s go!
           </button>
         </section>

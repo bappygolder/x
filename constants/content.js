@@ -68,3 +68,13 @@ export const preferenceOptions = [
     "Travel & Nature",
     "Other",                       
 ]
+
+export const buttonText = [
+    "Instagram",
+    "X(formerlyTwitter)",
+    "Facebook",
+    "Pinterest",
+    "LinkedIn",
+    "Snapchat",
+    "TikTok",
+]

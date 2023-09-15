@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { preferenceOptions } from "../../../constants/content";
 import styles from "./styles.module.css";
+import Header from "../../header/page";
 
-function Preferences() {
+function Preferences({handleNext}) {
   const [selectedItems, setSelectedItems] = useState([]);
   const maxSelections = 5; // Maximum number of items the user can select
 
@@ -21,10 +22,7 @@ function Preferences() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Tell us about your preferences.</h1>
-      <p className={styles.paragraph}>
-        What is your social account about? Select any 5.
-      </p>
+     <Header title={"Tell us about your preferences."} subtitle={"What is your social account about? Select any 5."} />
 
       <section>
         <div className={styles.options}>
@@ -50,6 +48,7 @@ function Preferences() {
           background: `linear-gradient(90deg, #3579F6 ${progress}%, #DCECFF ${progress}%)`,
         }}
         disabled={selectedItems.length !== maxSelections}
+        onClick={handleNext}
       >
         Continue
       </button>

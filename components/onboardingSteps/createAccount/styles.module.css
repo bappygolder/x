@@ -2,10 +2,6 @@
     @apply font-poppins mt-2 min-[390px]:mt-8;
 }
 
-.title {
-    @apply text-[#000] text-xl font-medium leading-7;
-}
-
 .formSection {
     @apply flex flex-col w-full mt-2 min-[390px]:mt-5;
 }

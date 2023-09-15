@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Accounts from '../components/onboardingSteps/createAccount/page';
 import Preferences from '../components/onboardingSteps/preferences/page';
-import SocialAccounts from '../components/onboardingSteps/socialAccounts';
+import SocialAccounts from '../components/onboardingSteps/socialAccounts/page';
 import ProgressBar from '../components/progressBar/progress';
 import styles from "./styles.module.css";
 import Homescreen from '../components/onboardingSteps/homescreen/page';
@@ -43,8 +43,8 @@ function Home() {
       {step > 1 && <ProgressBar currentStep={step} totalSteps={totalSteps} handlePrevious={handlePrevious} />}
       <form onSubmit={handleSubmit}>
         {step === 2 && <Accounts formData={formData} handleChange={handleChange} handleNext={handleNext} />}
-        {step === 3 && <Preferences formData={formData} handleChange={handleChange} />}
-        {step === 4 && <SocialAccounts formData={formData} handleChange={handleChange} />}
+        {step === 3 && <Preferences formData={formData} handleChange={handleChange} handleNext={handleNext} />}
+        {step === 4 && <SocialAccounts formData={formData} handleChange={handleChange} handleNext={handleNext} />}
       </form>
     </div>
   );

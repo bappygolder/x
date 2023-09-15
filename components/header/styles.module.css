@@ -1,0 +1,7 @@
+.title {
+    @apply text-[#000000] text-xl font-medium mt-2;
+}
+
+.paragraph {
+    @apply text-sm font-normal;
+}

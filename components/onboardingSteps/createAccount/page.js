@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import googleIcon from "../../../public/icons/googleIcon.png";
 import appleIcon from "../../../public/icons/appleIcon.png";
 import Image from "next/image";
+import Header from "../../header/page";
 
 const inputFields = [
   {
@@ -22,9 +23,7 @@ function Accounts({ handleChange, handleNext }) {
   // Render your form fields for step 1 here
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>
-        Great! Let’s start by setting up your account.
-      </h1>
+     <Header title={"Great! Let’s start by setting up your account."}/>
 
       <section className={styles.formSection}>
         <div>
