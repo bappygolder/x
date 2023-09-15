@@ -1,5 +1,5 @@
 .container {
-    @apply font-poppins mt-2 min-[390px]:mt-8;
+    @apply font-poppins mt-2;
 }
 
 .formSection {
