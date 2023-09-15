@@ -70,7 +70,7 @@ function Accounts({ handleChange, handleNext }) {
 
       <section className={styles.buttons}>
         <button className={styles.createAccountButton} onClick={handleNext}>Create account</button>
-        <span className="mt-2 mb-2 min-[390px]:mt-4 min-[390px]:mb-4">OR</span>
+        <span className="mt-2 mb-2 min-[390px]:mt-5 min-[390px]:mb-5">OR</span>
         <button
           className={`${styles.createAccountButton} ${styles.googleButton}`}
         >
