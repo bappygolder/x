@@ -70,7 +70,7 @@ function Accounts({ handleChange, handleNext }) {
 
       <section className={styles.buttons}>
         <button className={styles.createAccountButton} onClick={handleNext}>Create account</button>
-        <span className="mt-2 mb-2 min-[390px]:mt-5 min-[390px]:mb-5">OR</span>
+        <span className={styles.buttonDivide}>OR</span>
         <button
           className={`${styles.createAccountButton} ${styles.googleButton}`}
         >
@@ -83,8 +83,8 @@ function Accounts({ handleChange, handleNext }) {
           <Image src={appleIcon} alt="apple" />
           Continue with Apple
         </button>
-        <p className="font-normal text-sm mt-4">
-          Already have an account? <span className="font-medium">Log in</span>
+        <p className={styles.login}>
+          Already have an account? <span className={styles.loginSpan}>Log in</span>
         </p>
       </section>
     </div>
