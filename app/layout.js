@@ -3,9 +3,10 @@ import React from 'react';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import './globals.css';
+import Provider from '../components/Provider';
 
 // Initialize the Inter font subset
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 // Define metadata
 const metadata = {
@@ -52,7 +53,7 @@ const RootLayout = ({ children }) => {
           <link key={index} {...icon} />
         ))}
       </Head>
-      <body className={inter.className}>{children}</body>
+      <body><Provider>{children}</Provider></body>
     </html>
   );
 };

@@ -1,9 +1,12 @@
+"use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./styles.module.css";
 import googleIcon from "../../../public/icons/googleIcon.png";
 import appleIcon from "../../../public/icons/appleIcon.png";
 import Image from "next/image";
 import Header from "../../header/page";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const inputFields = [
   {
@@ -20,7 +23,18 @@ const inputFields = [
   },
 ];
 function Accounts({ handleChange, handleNext }) {
+  const [providers, setProviders] = useState(null);
+  const { data: session } = useSession();
   // Render your form fields for step 1 here
+
+  // Setting the provider
+  useEffect(() => {
+    const setUpProviders = async () => {
+      const response = await getProviders();
+      setProviders(response);
+    }
+    setUpProviders();
+  }, [])
   return (
     <div className={styles.container}>
      <Header title={"Great! Let’s start by setting up your account."}/>
@@ -69,10 +83,10 @@ function Accounts({ handleChange, handleNext }) {
       </section>
 
       <section className={styles.buttons}>
-        <button className={styles.createAccountButton} onClick={handleNext}>Create account</button>
+        <button className={styles.createAccountButton} onClick={session?.user && handleNext}>Create account</button>
         <span className={styles.buttonDivide}>OR</span>
         <button
-          className={`${styles.createAccountButton} ${styles.googleButton}`}
+          className={`${styles.createAccountButton} ${styles.googleButton}`} onClick={signIn}
         >
           <Image src={googleIcon} alt="google" />
           Continue with Google
