@@ -1,9 +1,13 @@
+"use client";
 // Import necessary dependencies
 import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from "../store/page";
+import { SessionProvider } from 'next-auth/react';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import './globals.css';
-import Provider from '../components/Provider';
+// import Provider from '../components/Provider';
 
 // Initialize the Inter font subset
 // const inter = Inter({ subsets: ['latin'] });
@@ -37,23 +41,7 @@ const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <Head>
-        {/* Meta tags */}
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta
-          name="keywords"
-          content="tweet generator, post generator, content suggestion generator, social media tool, content ideas, tweet ideas, social media marketing, content creation, engagement strategy, tweet suggestions, post inspiration, content planning, social media management"
-        />
-
-        {/* Icon links */}
-        {metadata.icons.map((icon, index) => (
-          <link key={index} {...icon} />
-        ))}
-      </Head>
-      <body><Provider>{children}</Provider></body>
+      <body><Provider store={store}><SessionProvider>{children}</SessionProvider></Provider></body>
     </html>
   );
 };

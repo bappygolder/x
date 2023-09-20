@@ -1,27 +1,38 @@
 "use client";
 import React, { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { totalSteps, handleNext, handlePrevious } from "../store/Slicers/onboardingStepperSlicer/stepperSlicer";
 import Accounts from "../components/onboardingSteps/createAccount/page";
-import Preferences from "../components/onboardingSteps/preferences/page";
-import SocialAccounts from "../components/onboardingSteps/socialAccounts/page";
 import ProgressBar from "../components/progressBar/progress";
 import styles from "./styles.module.css";
 import Homescreen from "../components/onboardingSteps/homescreen/page";
+import Preferences from "../components/onboardingSteps/preferences/page";
+import SocialAccounts from "../components/onboardingSteps/socialAccounts/page";
+// import UserPreference from "./userPreference/page";
 
 function Home() {
   const totalSteps = 6;
-  const [step, setStep] = useState(1); // Set the initial step to 1
+  let currentStep = useSelector((state) => state.stepperSlicer.currentStep);
+  const totalStep = useSelector((state) => state.stepperSlicer.totalSteps);
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
     // Initialize other form fields here
   });
 
-  const handleNext = () => {
-    setStep(step + 1);
+  const handleNextClick = () => {
+    if (currentStep < totalStep) {
+      dispatch(handleNext());
+
+      console.log(currentStep)
+    }
   };
 
-  const handlePrevious = () => {
-    setStep(step - 1);
+  const handlePreviousClick = () => {
+    if (currentStep > 1) {
+      dispatch(handlePrevious());
+    }
   };
 
   const handleChange = (e) => {
@@ -39,35 +50,37 @@ function Home() {
 
   return (
     <div className={styles.container}>
-      {step === 1 && <Homescreen handleNext={handleNext} />}{" "}
+      {currentStep <= 1 && <Homescreen handleNext={handleNextClick} />}{" "}
       {/* Render Step 1 */}
-      {step > 1 && (
+      {currentStep > 1 && (
         <ProgressBar
-          currentStep={step}
+          currentStep={currentStep}
           totalSteps={totalSteps}
-          handlePrevious={handlePrevious}
+          handlePrevious={handlePreviousClick}
         />
       )}
       <form onSubmit={handleSubmit}>
-        {step === 2 && (
+        {currentStep === 2 && (
           <Accounts
             formData={formData}
             handleChange={handleChange}
-            handleNext={handleNext}
+            handleNext={handleNextClick}
           />
         )}
-        {step === 3 && (
+
+{currentStep === 3 && (
           <Preferences
             formData={formData}
             handleChange={handleChange}
-            handleNext={handleNext}
+            handleNext={handleNextClick}
           />
         )}
-        {step === 4 && (
+
+{currentStep === 4 && (
           <SocialAccounts
             formData={formData}
             handleChange={handleChange}
-            handleNext={handleNext}
+            handleNext={handleNextClick}
           />
         )}
       </form>

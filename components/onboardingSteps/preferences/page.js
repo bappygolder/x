@@ -1,10 +1,17 @@
+"use client";
 import React, { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { currentStep, totalSteps, handleNext, handlePrevious } from "../../../store/Slicers/onboardingStepperSlicer/stepperSlicer";
 import { preferenceOptions } from "../../../constants/content";
 import styles from "./styles.module.css";
 import Header from "../../header/page";
 
-function Preferences({handleNext}) {
+function Preferences() {
   const [selectedItems, setSelectedItems] = useState([]);
+  // const handleNext = useSelector((state) => state.stepperSlicer.handleNext);
+  const currentStep = useSelector((state) => state.stepperSlicer.currentStep);
+  const totalStep = useSelector((state) => state.stepperSlicer.totalSteps);
+  const dispatch = useDispatch();
   const maxSelections = 5; // Maximum number of items the user can select
 
   const toggleSelection = (item) => {
@@ -15,6 +22,15 @@ function Preferences({handleNext}) {
     } else if (selectedItems.length < maxSelections) {
       // If not selected and the maximum limit is not reached, add it to the selected list
       setSelectedItems([...selectedItems, item]);
+    }
+  };
+
+
+  const handleNextClick = () => {
+    if (currentStep < totalStep) {
+      dispatch(handleNext());
+
+      console.log(totalStep)
     }
   };
 
@@ -48,7 +64,7 @@ function Preferences({handleNext}) {
           background: `linear-gradient(90deg, #3579F6 ${progress}%, #DCECFF ${progress}%)`,
         }}
         disabled={selectedItems.length !== maxSelections}
-        onClick={handleNext}
+        onClick={handleNextClick}
       >
         Continue
       </button>
