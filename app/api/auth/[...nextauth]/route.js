@@ -1,15 +1,15 @@
-import NextAuth from "next-auth";
-// import EmailProvider from "next-auth/providers/email";
-import GoogleProvider from "next-auth/providers/google";
-import { connectToDB } from "../../../../utils/database";
-import User from "../../../models/user";
+import NextAuth from 'next-auth';
+// import EmailProvider from 'next-auth/providers/email';
+import GoogleProvider from 'next-auth/providers/google';
+import { connectToDB } from '../../../../utils/database';
+import User from '../../../models/user';
 
 const handler = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      redirect: false
+      redirect: false,
     }),
     // EmailProvider({
     //   server: process.env.EMAIL_SERVER,
@@ -23,6 +23,7 @@ const handler = NextAuth({
         email: session.user.email,
       });
 
+      // eslint-disable-next-line no-param-reassign, no-underscore-dangle
       session.user.id = sessionUser._id.toString();
 
       return session;
@@ -32,21 +33,21 @@ const handler = NextAuth({
       try {
         await connectToDB();
 
-        //Check if a user already exists in the database
+        // Check if a user already exists in the database
         const userExists = await User.findOne({ email: profile.email });
 
-        //If not create a new user in the database
+        // If not create a new user in the database
         if (!userExists) {
           await User.create({
             email: profile.email,
-            username: profile.name.replace(/\s/g, "").toLowerCase(),
+            username: profile.name.replace(/\s/g, '').toLowerCase(),
             image: profile.picture,
           });
         }
 
         return true;
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         return false;
       }
     },

@@ -1,11 +1,11 @@
-"use client";
+'use client';
+
 // Import necessary dependencies
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from "../store/page";
+// import Head from 'next/head';
 import { SessionProvider } from 'next-auth/react';
-import { Inter } from 'next/font/google';
-import Head from 'next/head';
+import { store } from '../store/page';
 import './globals.css';
 // import Provider from '../components/Provider';
 
@@ -40,7 +40,7 @@ const metadata = {
 // Define the RootLayout component
 const RootLayout = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body><Provider store={store}><SessionProvider>{children}</SessionProvider></Provider></body>
     </html>
   );
