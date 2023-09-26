@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next eslint"
+    "start": "next start"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^13.5.3",
