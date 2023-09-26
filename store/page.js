@@ -1,10 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { setupListeners } from "@reduxjs/toolkit/query";
+import { configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/query';
 
-import stepperSlicer from "./Slicers/onboardingStepperSlicer/stepperSlicer";
+import stepperSlicer from './Slicers/onboardingStepperSlicer/stepperSlicer';
 
 export const store = configureStore({
   reducer: {
+    // eslint-disable-next-line object-shorthand
     stepperSlicer: stepperSlicer,
   },
 });

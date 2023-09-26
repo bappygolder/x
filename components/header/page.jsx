@@ -1,10 +1,10 @@
-import React from "react";
-import styles from "./styles.module.css";
+import React from 'react';
+import styles from './styles.module.css';
 
-function Header({title, subtitle}) {
+// eslint-disable-next-line react/prop-types
+function Header({ title, subtitle }) {
   return (
     <div>
-      {" "}
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.paragraph}>
         {subtitle}

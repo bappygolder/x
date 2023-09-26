@@ -1,26 +1,25 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 let isConnected = false;
 
+// eslint-disable-next-line import/prefer-default-export
 export const connectToDB = async () => {
+//   console.log('MongoDB connection URI:', process.env.MONGO_DB_URI);
+  mongoose.set('strictQuery', true);
 
-    console.log("MongoDB connection URI:", process.env.MONGO_DB_URI);
-    mongoose.set("strictQuery", true);
-
-    if(isConnected){
-        console.log("DB connected");
-        return;
-    }
-    try {
-        await mongoose.connect(process.env.MONGO_DB_URI, {
-            dbName: "Post-Pilot",
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        isConnected = true;
-        console.log("MongoDB connected");
-    } catch (error){
-        console.error("MongoDB connection error:", error);
-    }
-
-}
+  if (isConnected) {
+    // console.log('DB connected');
+    return;
+  }
+  try {
+    await mongoose.connect(process.env.MONGO_DB_URI, {
+      dbName: 'Post-Pilot',
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    isConnected = true;
+    // console.log('MongoDB connected');
+  } catch (error) {
+    // console.error('MongoDB connection error:', error);
+  }
+};

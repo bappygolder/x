@@ -8,17 +8,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Arial', 'sans-serif'], // Example font-family setting
-        custom: ['CustomFont', 'sans-serif'], // Example for using a custom font
+        poppins: ['Poppins', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-      fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        lato: ['Lato', 'sans-serif'],
       },
     },
   },

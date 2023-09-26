@@ -1,11 +1,12 @@
-"use client";
-import { useState } from "react";
-import Image from "next/image";
-import styles from "./styles.module.css";
-import trash from "../../public/icons/trash-can.png";
-import trashWhite from "../../public/icons/trash-white.png";
-import plus from "../../public/icons/plus.png";
-import plusWhite from "../../public/icons/plus-white.png";
+'use client';
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import styles from './styles.module.css';
+import trash from '../../public/icons/trash-can.png';
+import trashWhite from '../../public/icons/trash-white.png';
+import plus from '../../public/icons/plus.png';
+import plusWhite from '../../public/icons/plus-white.png';
 
 function PostSection() {
   const [contentType, setContentType] = useState(false);
@@ -46,11 +47,14 @@ function PostSection() {
                   defaultValue="Small Posts (Tweets)"
                 />
                 {hoverContentType ? (
-                  <span
+                  // eslint-disable-next-line jsx-a11y/click-events-have-key-events,
+                  // jsx-a11y/no-static-element-interactions
+                  <button
+                    type="button"
                     className={`${styles.trashcan} !bg-[#FF5F5F]`}
                     onClick={() => {
                       setContentType(true);
-                      setHoverContentType(false)
+                      setHoverContentType(false);
                     }}
                     onMouseEnter={() => setHoverContentType(true)}
                     onMouseLeave={() => setHoverContentType(false)}
@@ -62,9 +66,10 @@ function PostSection() {
                       width={17}
                       height={14}
                     />
-                  </span>
+                  </button>
                 ) : (
-                  <span
+                  <button
+                    type="button"
                     className={styles.trashcan}
                     onClick={() => {
                       setContentType(true);
@@ -79,7 +84,7 @@ function PostSection() {
                       width={17}
                       height={14}
                     />
-                  </span>
+                  </button>
                 )}
               </div>
             </div>
@@ -94,7 +99,8 @@ function PostSection() {
                   defaultValue="Small Posts (Tweets)"
                 />
                 {hoverPossibleCTA ? (
-                  <span
+                  <button
+                    type="button"
                     className={`${styles.trashcan} !bg-[#FF5F5F]`}
                     onClick={() => {
                       setPossibleCTA(true);
@@ -104,15 +110,16 @@ function PostSection() {
                     onMouseLeave={() => setHoverPossibleCTA(false)}
                   >
                     <Image
-                      className={"relative"}
+                      className="relative"
                       alt=""
                       src={trashWhite}
                       width={17}
                       height={14}
                     />
-                  </span>
+                  </button>
                 ) : (
-                  <span
+                  <button
+                    type="button"
                     className={styles.trashcan}
                     onClick={() => {
                       setPossibleCTA(true);
@@ -121,13 +128,13 @@ function PostSection() {
                     onMouseLeave={() => setHoverPossibleCTA(false)}
                   >
                     <Image
-                      className={"relative"}
+                      className="relative"
                       alt=""
                       src={trash}
                       width={17}
                       height={14}
                     />
-                  </span>
+                  </button>
                 )}
               </div>
             </div>
@@ -137,45 +144,50 @@ function PostSection() {
 
       <div className={styles.addContent}>
         {contentType && (
-          <div
+          <button
+            type="button"
             className={styles.add}
             onClick={() => {
               setContentType(false);
               setHoverContentType(false);
             }}
           >
-           {hoverContentType ?
-            <span className={`${styles.trashcan} !bg-[#195BD6]`} 
-            onMouseEnter={() => setHoverContentType(true)}
-            onMouseLeave={() => setHoverContentType(false)}
-            >
-              <Image
-                className={"relative"}
-                alt=""
-                src={plusWhite}
-                width={17}
-                height={14}
-              />
-            </span>
-            :
-            <span className={styles.trashcan}
-            onMouseEnter={() => setHoverContentType(true)}
-            onMouseLeave={() => setHoverContentType(false)}
-            >
-              <Image
-                className={"relative"}
-                alt=""
-                src={plus}
-                width={17}
-                height={14}
-              />
-            </span>
-            }
+            {hoverContentType ? (
+              <span
+                className={`${styles.trashcan} !bg-[#195BD6]`}
+                onMouseEnter={() => setHoverContentType(true)}
+                onMouseLeave={() => setHoverContentType(false)}
+              >
+                <Image
+                  className="relative"
+                  alt=""
+                  src={plusWhite}
+                  width={17}
+                  height={14}
+                />
+              </span>
+            )
+              : (
+                <span
+                  className={styles.trashcan}
+                  onMouseEnter={() => setHoverContentType(true)}
+                  onMouseLeave={() => setHoverContentType(false)}
+                >
+                  <Image
+                    className="relative"
+                    alt=""
+                    src={plus}
+                    width={17}
+                    height={14}
+                  />
+                </span>
+              )}
             <h1 className={styles.title}>Add Content Type</h1>
-          </div>
+          </button>
         )}
         {possibleCTA && (
-          <div
+          <button
+            type="button"
             className={styles.add}
             onClick={() => {
               setPossibleCTA(false);
@@ -184,7 +196,6 @@ function PostSection() {
           >
 
             {/* Setting the hover effect using state */}
-            
             {hoverPossibleCTA ? (
               <span
                 className={`${styles.trashcan} !bg-[#195BD6]`}
@@ -192,7 +203,7 @@ function PostSection() {
                 onMouseLeave={() => setHoverPossibleCTA(false)}
               >
                 <Image
-                  className={"relative"}
+                  className="relative"
                   alt=""
                   src={plusWhite}
                   width={17}
@@ -206,7 +217,7 @@ function PostSection() {
                 onMouseLeave={() => setHoverPossibleCTA(false)}
               >
                 <Image
-                  className={"relative"}
+                  className="relative"
                   alt=""
                   src={plus}
                   width={17}
@@ -215,12 +226,12 @@ function PostSection() {
               </span>
             )}
             <h1 className={styles.title}>Possible CTA</h1>
-          </div>
+          </button>
         )}
       </div>
 
       <div className={styles.generatePost}>
-        <button className={styles.generatePostButton}>
+        <button type="button" className={styles.generatePostButton}>
           Generate Next Idea
         </button>
       </div>

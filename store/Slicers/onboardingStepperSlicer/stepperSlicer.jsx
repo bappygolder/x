@@ -2,7 +2,7 @@
 // In a file named formSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
-const stepperSlice = createSlice({
+const stepperSlicer = createSlice({
   name: 'stepperSlicer',
   initialState: {
     currentStep: 1,
@@ -22,6 +22,6 @@ const stepperSlice = createSlice({
 });
 
 export const {
-  setCurrentStep, totalSteps, handleNext, handlePrevious,
-} = stepperSlice.actions;
-export default stepperSlice.reducer;
+  currentStep, totalSteps, handleNext, handlePrevious,
+} = stepperSlicer.actions;
+export default stepperSlicer.reducer;

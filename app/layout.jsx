@@ -1,18 +1,13 @@
 'use client';
 
-// Import necessary dependencies
 import React from 'react';
+import Head from 'next/head';
 import { Provider } from 'react-redux';
-// import Head from 'next/head';
 import { SessionProvider } from 'next-auth/react';
 import { store } from '../store/page';
 import './globals.css';
-// import Provider from '../components/Provider';
 
-// Initialize the Inter font subset
-// const inter = Inter({ subsets: ['latin'] });
-
-// Define metadata
+// Define metadata (you already have this defined)
 const metadata = {
   title: '𝕏 Post Subject Generator - Tweet Generator',
   description: 'Create your own unique content ideas effortlessly with the 𝕏 (formerly Twitter) Post Subject Generator. Seamlessly generate tweet suggestions spanning a diverse range of themes, content types, and engaging calls to action. Elevate your social media prowess with this innovative tool.',
@@ -38,12 +33,22 @@ const metadata = {
 };
 
 // Define the RootLayout component
-const RootLayout = ({ children }) => {
+// eslint-disable-next-line react/prop-types
+function RootLayout({ children }) {
   return (
-    <html lang='en'>
-      <body><Provider store={store}><SessionProvider>{children}</SessionProvider></Provider></body>
+    <html lang="en">
+      <body>
+        <Head>
+          <title>{metadata.title}</title>
+          <meta name="description" content={metadata.description} />
+          {/* Add other meta tags as needed */}
+        </Head>
+        <Provider store={store}>
+          <SessionProvider>{children}</SessionProvider>
+        </Provider>
+      </body>
     </html>
   );
-};
+}
 
 export default RootLayout;

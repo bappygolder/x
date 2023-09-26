@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
@@ -5,19 +6,13 @@
 
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import {
-//   currentStep,
-//   totalSteps,
-//   handleNext,
-//   handlePrevious,
-// } from '../../../store/Slicers/onboardingStepperSlicer/stepperSlicer';
 import { preferenceOptions } from '../../../constants/content';
 import styles from './styles.module.css';
 import Header from '../../header/page';
 
-function Preferences() {
+// eslint-disable-next-line react/prop-types
+function Preferences({ handleNext }) {
   const [selectedItems, setSelectedItems] = useState([]);
-  const handleNext = useSelector((state) => state.stepperSlicer.handleNext);
   const currentStep = useSelector((state) => state.stepperSlicer.currentStep);
   const totalStep = useSelector((state) => state.stepperSlicer.totalSteps);
   const dispatch = useDispatch();
@@ -36,7 +31,7 @@ function Preferences() {
 
   const handleNextClick = () => {
     if (currentStep < totalStep) {
-      dispatch(handleNext());
+      handleNext();
 
       // console.log(totalStep);
     }
