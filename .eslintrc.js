@@ -4,25 +4,25 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: 'airbnb',
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: [
-        '.eslintrc.{js,cjs}',
-      ],
-      parserOptions: {
-        sourceType: 'script',
-      },
-    },
+  extends: [
+    'airbnb',
+    'plugin:react/recommended', // Add React rules
+    'plugin:jsx-a11y/recommended', // Add accessibility rules
+    'plugin:@next/next/recommended', // Add Next.js rules
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: 2021,
     sourceType: 'module',
   },
   rules: {
-    'linebreak-style': ['error', 'unix'], // Add this line to enforce LF linebreaks
+    // Your custom rules or overrides here
+    'linebreak-style': ['error', 'unix'],
+    // Add any other project-specific rules
+  },
+  settings: {
+    // Configure the Next.js version (optional)
+    react: {
+      version: 'detect',
+    },
   },
 };
