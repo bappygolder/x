@@ -23,7 +23,7 @@ jobs:
       run: npm install
 
     - name: Authenticate with Vercel
-      run: npx vercel login
+      run: npx vercel login --token ${{ process.env.VERCEL_TOKEN }}
 
     - name: Build and deploy to Vercel
       run: |
