@@ -7,7 +7,7 @@ import { signIn, getProviders } from 'next-auth/react';
 // import { useRouter } from 'next/router';
 import styles from './styles.module.css';
 import googleIcon from '../../../public/icons/googleIcon.png';
-import appleIcon from '../../../public/icons/appleIcon.png';
+import xIcon from '../../../public/icons/x_icon.png';
 import Header from '../../header/page';
 
 const inputFields = [
@@ -25,7 +25,7 @@ const inputFields = [
   },
 ];
 // eslint-disable-next-line react/prop-types
-function Accounts({ handleChange, handleNext }) {
+function Accounts({ handleChange, handleNext, handleMultiNext }) {
   const [providers, setProviders] = useState(null);
   // const { data: session } = useSession();
   // Render your form fields for step 1 here
@@ -112,10 +112,11 @@ function Accounts({ handleChange, handleNext }) {
         ))}
         <button
           type="button"
-          className={`${styles.createAccountButton} ${styles.appleButton}`}
+          className={`${styles.createAccountButton} ${styles.xButton}`}
+          onClick={handleMultiNext}
         >
-          <Image src={appleIcon} alt="apple" />
-          Continue with Apple
+          <Image src={xIcon} alt="X-icon" />
+          Log in with x (formerly Twitter)
         </button>
         <p className={styles.login}>
           Already have an account?

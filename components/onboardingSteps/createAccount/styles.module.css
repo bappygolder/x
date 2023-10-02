@@ -46,7 +46,7 @@
     @apply bg-white text-black shadow-xl bg-opacity-[17] mt-0;
 }
 
-.appleButton {
+.xButton {
     @apply bg-black text-white mt-2; 
 }
 

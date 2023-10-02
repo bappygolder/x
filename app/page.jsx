@@ -9,10 +9,11 @@ import styles from './styles.module.css';
 import Homescreen from '../components/onboardingSteps/homescreen/page';
 import Preferences from '../components/onboardingSteps/preferences/page';
 import SocialAccounts from '../components/onboardingSteps/socialAccounts/page';
+import XLogin from '../components/onboardingSteps/x-login/page';
 // import UserPreference from './userPreference/page';
 
 function Home() {
-  const totalSteps = 6;
+  // const totalSteps = 6;
   const currentStep = useSelector((state) => state.stepperSlicer.currentStep);
   const totalStep = useSelector((state) => state.stepperSlicer.totalSteps);
   const dispatch = useDispatch();
@@ -29,10 +30,23 @@ function Home() {
       // console.log(currentStep)
     }
   };
-
   const handlePreviousClick = () => {
     if (currentStep > 1) {
       dispatch(handlePrevious());
+    }
+  };
+
+  // This is to jump the X(twitter) login for users who chose X(twitter) login registeration option
+  const handleMultiNextClick = () => {
+    if (currentStep < totalStep) {
+      dispatch(handleNext(4));
+    }
+  };
+
+  // Opposite of HandleMultiNextClick
+  const handleMultiPreviousClick = () => {
+    if (currentStep > 1) {
+      dispatch(handlePrevious(2));
     }
   };
 
@@ -56,8 +70,9 @@ function Home() {
       {currentStep > 1 && (
         <ProgressBar
           currentStep={currentStep}
-          totalSteps={totalSteps}
+          totalSteps={totalStep}
           handlePrevious={handlePreviousClick}
+          handleMultiPrevious={handleMultiPreviousClick}
         />
       )}
       <form onSubmit={handleSubmit}>
@@ -66,10 +81,19 @@ function Home() {
             formData={formData}
             handleChange={handleChange}
             handleNext={handleNextClick}
+            handleMultiNext={handleMultiNextClick}
           />
         )}
 
         {currentStep === 3 && (
+          <XLogin
+            formData={formData}
+            handleChange={handleChange}
+            handleNext={handleNextClick}
+          />
+        )}
+
+        {currentStep === 4 && (
         <Preferences
           formData={formData}
           handleChange={handleChange}
@@ -77,7 +101,7 @@ function Home() {
         />
         )}
 
-        {currentStep === 4 && (
+        {currentStep === 5 && (
           <SocialAccounts
             formData={formData}
             handleChange={handleChange}

@@ -1,0 +1,15 @@
+.xlogin {
+    @apply flex flex-col items-center;
+}
+
+.text {
+    @apply font-poppins font-medium text-xl text-[#111111] mt-40;
+}
+
+.createAccountButton {
+    @apply flex items-center justify-center w-full bg-[#3579F6] h-[54px] px-[10px] py-0 rounded-[999px] gap-[10px] text-white mt-5 min-[390px]:mt-[18px];
+}
+
+.xButton {
+    @apply bg-black text-white mt-4; 
+}

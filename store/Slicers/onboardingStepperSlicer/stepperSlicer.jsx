@@ -12,11 +12,21 @@ const stepperSlicer = createSlice({
     setCurrentStep: (state, action) => {
       state.currentStep = action.payload;
     },
-    handlePrevious: (state) => {
-      state.currentStep -= 1;
+    handlePrevious: (state, action) => {
+      // Check if a payload (target step) is provided
+      if (action.payload !== undefined) {
+        state.currentStep = action.payload;
+      } else {
+        state.currentStep -= 1;
+      }
     },
-    handleNext: (state) => {
-      state.currentStep += 1;
+    handleNext: (state, action) => {
+      // Check if a payload (target step) is provided
+      if (action.payload !== undefined) {
+        state.currentStep = action.payload;
+      } else {
+        state.currentStep += 1;
+      }
     },
   },
 });
