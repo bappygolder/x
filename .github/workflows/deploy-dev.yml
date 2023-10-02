@@ -20,7 +20,7 @@ jobs:
         node-version: 14 # Choose the Node.js version you need
 
     - name: Install dependencies
-      run: npm i
+      run: npm ci
 
     # - name: Authenticate with Vercel
     #   run: npx vercel login
