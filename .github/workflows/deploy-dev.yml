@@ -20,6 +20,7 @@ jobs:
         node-version: 14 # Choose the Node.js version you need
 
     - name: Install dependencies
+<<<<<<< HEAD
       run: npm i
 
     - name: Authenticate with Vercel
@@ -34,5 +35,21 @@ jobs:
     #     npx vercel --prod
     #   env:
     #     VERCEL_TOKEN: process.env.VERCEL_TOKEN # Use a GitHub secret for security
+=======
+      run: npm install
+
+    - name: Authenticate with Vercel
+      run: npx vercel login --token ${{ secrets.VERCEL_TOKEN }}
+
+    - name: Build and deploy to Vercel
+      run: |
+        # Build your project (replace with your build command)
+        npm run build
+
+        # Deploy to Vercel
+        npx vercel --prod
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} # Use a GitHub secret for security
+>>>>>>> 06b3e99b6b53fab187fa47db766280dbc805ab72
 
 # Don't forget to add your GitHub secret 'VERCEL_TOKEN' containing your Vercel token.
