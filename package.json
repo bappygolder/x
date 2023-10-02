@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    
+    "@next/eslint-plugin-next": "^13.5.3",
     "@reduxjs/toolkit": "^1.9.5",
     "autoprefixer": "10.4.15",
     "eslint-config-next": "13.4.19",

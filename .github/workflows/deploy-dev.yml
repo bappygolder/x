@@ -1,4 +1,4 @@
-name: Deploy to Vercel
+name: CI
 
 on:
   push:
@@ -6,7 +6,8 @@ on:
       - dev
 
 jobs:
-  deploy:
+  eslint:
+    name: Lint code base
 
     runs-on: ubuntu-latest
 
@@ -16,11 +17,12 @@ jobs:
 
     - name: Use Node.js
       uses: actions/setup-node@v2
-      with:
-        node-version: 14 # Choose the Node.js version you need
 
-    - name: Install dependencies
+    - name: Install packages
       run: npm ci
+    - name: Run ESlint 
+      run: npm run lint
+
 
     # - name: Authenticate with Vercel
     #   run: npx vercel login
