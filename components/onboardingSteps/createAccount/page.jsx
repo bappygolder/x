@@ -9,6 +9,7 @@ import styles from './styles.module.css';
 import googleIcon from '../../../public/icons/googleIcon.png';
 import xIcon from '../../../public/icons/x_icon.png';
 import Header from '../../header/page';
+import checked from '../../../public/icons/checked.png';
 
 const inputFields = [
   {
@@ -25,8 +26,10 @@ const inputFields = [
   },
 ];
 // eslint-disable-next-line react/prop-types
-function Accounts({ handleChange, handleNext, handleMultiNext }) {
+function Accounts({ handleNext, handleMultiNext }) {
   const [providers, setProviders] = useState(null);
+  const [agreedToPromotions, setAgreedToPromotions] = useState(false); // Checkbox state
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
   // const { data: session } = useSession();
   // Render your form fields for step 1 here
 
@@ -62,25 +65,38 @@ function Accounts({ handleChange, handleNext, handleMultiNext }) {
                 id={field.id}
                 name={field.name}
                 placeholder={field.placeholder}
-                onChange={handleChange}
                 className={styles.input}
               />
             </div>
           ))}
         </div>
 
-        <span className={styles.checkboxSpan}>
-          <input type="checkbox" className={styles.checkbox} />
+        <div className={styles.checkboxSpan}>
+          <button type="button" className={styles.checkbox} onClick={() => setAgreedToPromotions(!agreedToPromotions)}>
+            {agreedToPromotions && (
+            <Image
+              src={checked}
+              // className={styles.checkIcon}
+            />
+            )}
+          </button>
           <p className={styles.paragraph}>
-            I agree to receive
+            I agree to receive &nbsp;
             <Link href="/" className={styles.legalPages}>
               promotional offers and deals from PostPilot.
             </Link>
           </p>
-        </span>
+        </div>
 
-        <span className={styles.checkboxSpan}>
-          <input type="checkbox" className={styles.checkbox} />
+        <div className={styles.checkboxSpan}>
+          <button type="button" className={styles.checkbox} onClick={() => setAgreedToTerms(!agreedToTerms)}>
+            {agreedToTerms && (
+            <Image
+              src={checked}
+              // className={styles.checkIcon}
+            />
+            )}
+          </button>
           <p className={styles.paragraph}>
             By creating an account, you agree to our
             <Link href="/" className={styles.legalPages}>
@@ -91,7 +107,7 @@ function Accounts({ handleChange, handleNext, handleMultiNext }) {
               Privacy Statement.
             </Link>
           </p>
-        </span>
+        </div>
       </section>
 
       <section className={styles.buttons}>

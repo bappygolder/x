@@ -32,6 +32,6 @@ const stepperSlicer = createSlice({
 });
 
 export const {
-  currentStep, totalSteps, handleNext, handlePrevious,
+  currentStep, totalSteps, handleNext, handlePrevious, setCurrentStep,
 } = stepperSlicer.actions;
 export default stepperSlicer.reducer;
