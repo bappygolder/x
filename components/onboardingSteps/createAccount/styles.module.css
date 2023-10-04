@@ -11,7 +11,7 @@
 }
 
 .input {
-    @apply w-full h-[67px] bg-[#000] opacity-[4%] rounded-lg;
+    @apply w-full h-[67px] bg-[#000] bg-opacity-5 rounded-lg !text-black text-sm px-4;
 }
 
 .checkboxSpan {
